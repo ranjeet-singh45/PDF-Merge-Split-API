@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: PDF Merge/Split API
+  version: 1.0.0
+paths:
+  /api/pdf/merge:
+    post:
+      summary: Merge multiple PDF files
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                pdfs:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+      responses:
+        '200':
+          description: Merged PDF file
+  /api/pdf/split:
+    post:
+      summary: Split a PDF file by page ranges
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                pdf:
+                  type: string
+                  format: binary
+                ranges:
+                  type: string
+      responses:
+        '200':
+          description: List of split PDF files
+  /api/pdf/download/{filename}:
+    get:
+      summary: Download a processed PDF and delete after
+      parameters:
+        - name: filename
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: PDF file
