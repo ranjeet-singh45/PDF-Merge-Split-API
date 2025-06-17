@@ -1,5 +1,3 @@
-// README.md
-
 # 📄 PDF Merge & Split API (Node.js + Express)
 
 This backend-only project allows you to:
