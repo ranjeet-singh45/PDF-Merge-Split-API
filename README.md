@@ -9,18 +9,18 @@ This backend-only project allows you to:
 
 ---
 
-## 🚀 Features
+##  Features
 
-- ✅ Merge PDFs (with optional password)
-- ✂️ Split PDFs by page ranges (with optional password)
-- 🔐 Encrypt output using `qpdf`
-- 🧾 Status endpoint to track long tasks
-- 📥 File download with auto-delete
-- 📄 Swagger docs at `/api-docs`
+-  Merge PDFs (with optional password)
+-  Split PDFs by page ranges (with optional password)
+-  Encrypt output using `qpdf`
+-  Status endpoint to track long tasks
+-  File download with auto-delete
+-  Swagger docs at `/api-docs`
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack
 - Node.js 
 - Express.js
 - `pdf-lib`
@@ -30,14 +30,14 @@ This backend-only project allows you to:
 
 ---
 
-## 🛠 Installation & Setup
+##  Installation & Setup
 
-### 1. 📦 Install dependencies
+### 1.  Install dependencies
 ```bash
 npm install
 ```
 
-### 2. 🔐 Install `qpdf`
+### 2.  Install `qpdf`
 **Required for password protection**
 
 #### macOS
@@ -52,7 +52,7 @@ sudo apt install qpdf
 - Download from [https://qpdf.sourceforge.io/](https://qpdf.sourceforge.io/)
 - Add qpdf to your PATH
 
-### 3. ▶️ Run the server
+### 3. Run the server
 ```bash
 npm start
 ```
@@ -60,9 +60,9 @@ Server starts on `http://localhost:3000`
 
 ---
 
-## 🧪 API Usage
+##  API Usage
 
-### 📌 Merge PDFs
+###  Merge PDFs
 ```http
 POST /api/pdf/merge
 ```
@@ -70,7 +70,7 @@ POST /api/pdf/merge
 - `pdfs`: multiple files
 - `password` (optional)
 
-### 📌 Split PDF
+###  Split PDF
 ```http
 POST /api/pdf/split
 ```
@@ -79,24 +79,24 @@ POST /api/pdf/split
 - `ranges`: e.g., `1-2,3-4`
 - `password` (optional)
 
-### 📥 Download File
+###  Download File
 ```http
 GET /api/pdf/download/:filename
 ```
 Auto-deletes after download.
 
-### 📊 Check Task Status
+###  Check Task Status
 ```http
 GET /api/pdf/status/:taskId
 ```
 Returns `processing`, `completed`, `failed`, or `unknown`.
 
-### 📘 Swagger API Docs
+###  Swagger API Docs
 ```
 GET /api-docs
 ```
 
-## 🧼 Notes
+##  Notes
 - Uploaded files are auto-deleted after processing.
 - Processed files are deleted after download.
 - Password-protection requires `qpdf`.
